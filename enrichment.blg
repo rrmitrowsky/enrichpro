@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: enrichment.aux
+The style file: natbib.bst
+Database file #1: rich.bib
+You've used 5 entries,
+            2378 wiz_defined-function locations,
+            561 strings with 5227 characters,
+and the built_in function-call counts, 3226 in all, are:
+= -- 244
+> -- 297
+< -- 1
++ -- 93
+- -- 93
+* -- 357
+:= -- 601
+add.period$ -- 24
+call.type$ -- 5
+change.case$ -- 30
+chr.to.int$ -- 5
+cite$ -- 5
+duplicate$ -- 98
+empty$ -- 167
+format.name$ -- 98
+if$ -- 600
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 5
+newline$ -- 28
+num.names$ -- 20
+pop$ -- 28
+preamble$ -- 1
+purify$ -- 30
+quote$ -- 0
+skip$ -- 61
+stack$ -- 0
+substring$ -- 180
+swap$ -- 19
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 45
+warning$ -- 0
+while$ -- 23
+width$ -- 0
+write$ -- 67
