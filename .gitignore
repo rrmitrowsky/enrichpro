@@ -4,6 +4,7 @@
 *.blg
 *.log
 *.out
+*.gz
 
 # OS generated files #
 ######################
