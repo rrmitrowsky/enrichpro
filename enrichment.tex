@@ -17,10 +17,10 @@
    citecolor=blue, urlcolor=blue
  ]{hyperref} 
 
-%\usepackage{txfonts}
+\usepackage{txfonts}
 %  $$$: 
-\usepackage[subscriptcorrection,txsy]{mtpro}
-\usepackage[mtphrb]{mtpams}
+%\usepackage[subscriptcorrection,txsy]{mtpro}
+%\usepackage[mtphrb]{mtpams}
 %\usepackage[mtpcal, mtpfrak]{mtpb}
 %
 \newcommand{\bA}{\textsf{\textit{A}}}
@@ -74,12 +74,6 @@ Our work has some intersection whit the computation of `enrichment $p$-values' c
 
 However, how exactly the pattern nucleotide composition could influence the selection of target site selection are not well understood. To further characterize at a genome-wide scale these regions, we introduce a new method to provide a quantitative measure of the differential spectra of $k$-mers (DNA 'words' of length $k$) inside target DNA.
 
-\begin{figure}
- \input{figs/fig1}
- \label{fig:methodscheme}
- \caption{A: Input data segments $h_1, \ldots, h_n$ containing the occurence of a string $\mathcal S$ and reference segments $r_1, \ldots, r_n$. B: $r_{ij}$ and $h_{ij}$ matrizes of counts for a particular realization of the random variables $\eta_{ij}$, $\xi_{ij}$. C: Profile distribution for the occurence of $\mathcal S$ along a hotspost and a reference region.}
-\end{figure}
-
 
 \section{Method}
 Let $\mathcal A = \{\sf A, C, G, T\}$ and $\mathcal S \in \mathcal A^\ell$, be a given specific string of length $\ell\geq 1$. %\footnote{according to wikipedia an $\ell$-mer of a string is any possible substring of size $\ell$ of that string; clearly not what we want --I stick to string!}
@@ -110,6 +104,14 @@ Set $\xi_{ik}  = 1$ if $\mathcal S \notin h_{i,k-1}$ and $\mathcal S \in h_{i,k-
    \eta_j = \sum_{i=1}^n \eta_{ij}.
 \]
 The variables $\xi_j$ and $\eta_j$, $1 \leq j \leq k$, count the number of times that the string $\mathcal S$ occurs along of a hotspot region and of a reference region respectively. 
+
+
+\begin{figure}
+ \input{figs/fig1}
+ \label{fig:methodscheme}
+ \caption{A: Input data segments $h_1, \ldots, h_n$ containing the occurence of a string $\mathcal S$ and reference segments $r_1, \ldots, r_n$. B: $r_{ij}$ and $h_{ij}$ matrizes of counts for a particular realization of the random variables $\eta_{ij}$, $\xi_{ij}$. C: Profile distribution for the occurence of $\mathcal S$ along a hotspost and a reference region.}
+\end{figure}
+
 
 The basic question we like to address is wether the distribution profile of the string $\mathcal S$ is significatively different along a typical hotspot region and a reference region. This may be assessed  by considering the following $2\times k$ contingency table
 \[
