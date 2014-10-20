@@ -1,6 +1,11 @@
-%Discovery Notes(up to 4 pages, this is approx. 3000 words) Discovery notes report biologically interesting discoveries using computational techniques.
+%Discovery Notes(up to 4 pages, this is approx. 3000 words) Discovery
+%notes report biologically interesting discoveries using computational
+%techniques. 
 
-%Application Notes (up to 2 pages; this is approx. 1300 words or 1000 words plus one figure) Applications Notes are short descriptions of novel software or new algorithm implementations, databases and network services (web servers, and interfaces). 
+%Application Notes (up to 2 pages; this is approx. 1300 words or 1000
+%words plus one figure) Applications Notes are short descriptions of
+%novel software or new algorithm implementations, databases and
+%network services (web servers, and interfaces).
 
 \documentclass{bioinfo}
 \copyrightyear{}
@@ -50,7 +55,7 @@
 %     Roxo, 2501, Ribeir\~ao Preto, CEP 14051-140, SP, Brazil
 }
 
-\history{Received on XXXXX; revised on XXXXX; accepted on XXXXX}
+\history{Received on XXXXX; revised on XXXXX; accepted on XXXXX} 
 \editor{Associate Editor: XXXXXXX}
 
 \maketitle
@@ -63,23 +68,79 @@
 \end{abstract}
 
 \section{Introduction}
-The genome is targeted by a sophisticated and highly coordinated series of molecular events.  Among these events, aberrant DNA methylation patterns in human malignancy \cite{pmid23326238}, somatic retrotransposition in human cancers \cite{pmid22745252}, AID-dependent chromosomal translocations (Klein, 2011) and HIV integration (Cohn, 2014), which arrives throughout DNA, are not randomly distributed but instead associated with chromosomal regions and contributes to disrupt the integrity of the genome and human disease.
+The genome is targeted by a sophisticated and highly coordinated
+series of molecular events. Among these events, aberrant DNA
+methylation patterns in human malignancy \cite{pmid23326238}, somatic
+retrotransposition in human cancers \cite{pmid22745252}, AID-dependent
+chromosomal translocations (Klein, 2011) and HIV integration (Cohn,
+2014), which arrives throughout DNA, are not randomly distributed but
+instead associated with chromosomal regions and contributes to disrupt
+the integrity of the genome and human disease. 
 
-As result, these regions represents a genomic context in which are associate with multiple underlying mechanisms. The motif-based sequence analysis is the starting point to aim potential binding site of cis-regulatory elements associated. Nevertheless, the inherent low signal/noise ratio in sequence-based motif discovery is a limitation to detect a nucleic acid sequence pattern that has some biological significance. Moreover, these events may recognise a structural feature, rather than a specific sequence motif.
+As result, these regions represents a genomic context in which are
+associate with multiple underlying mechanisms. The motif-based
+sequence analysis is the starting point to aim potential binding site
+of cis-regulatory elements associated. Nevertheless, the inherent low
+signal/noise ratio in sequence-based motif discovery is a limitation
+to detect a nucleic acid sequence pattern that has some biological
+significance. Moreover, these events may recognise a structural
+feature, rather than a specific sequence motif. 
 
-Others approaches were introduced to detect functional regions using methods for computing sequence complexities \cite{pmid24533097,pmid21317142}. In these methods, the complexity is measured by the entropy which evaluates the randomness of DNA sequence. In particular, topological entropy has been applied to compute the complexity of introns, exons and promoter regions. Due to the finite sample and high-dimensionality problems, efforts aimed to overcome these problems are put forward \cite{pmid21317142}.\footnote{its: I would prefer to leave entropy out unless we have a really good point we want to make}
+%Others approaches were introduced to detect functional regions using
+%methods for computing sequence complexities
+%\cite{pmid24533097,pmid21317142}. In these methods, the complexity is
+%measured by the entropy which evaluates the randomness of DNA
+%sequence. In particular, topological entropy has been applied to
+%compute the complexity of introns, exons and promoter regions. Due to
+%the finite sample and high-dimensionality problems, efforts aimed to
+%overcome these problems are put forward
+%\cite{pmid21317142}.\footnote{its: I would prefer to leave entropy out
+%  unless we have a really good point we want to make} 
 
+Our work has some intersection whit the computation of `enrichment
+$p$-values' considered in  GO analysis. We may include the references
+\cite{HSL}, \cite{RPTP} (just one!) or any other if you know a better
+alternative. We may like to mention the paper by \cite{BM} because it
+also considers a test for enrichment (although it is restricted to
+ChiP-seq peaks, and somehow different). 
 
-Our work has some intersection whit the computation of `enrichment $p$-values' considered in  GO analysis. We may include the references \cite{HSL}, \cite{RPTP} (just one!) or any other if you know a better alternative. We may like to mention the paper by \cite{BM} because it also considers a test for enrichment (although it is restricted to ChiP-seq peaks, and somehow different).
-
-However, how exactly the pattern nucleotide composition could influence the selection of target site selection are not well understood. To further characterize at a genome-wide scale these regions, we introduce a new method to provide a quantitative measure of the differential spectra of $k$-mers (DNA 'words' of length $k$) inside target DNA.
+However, how exactly the pattern nucleotide composition could
+influence the selection of target site selection are not well
+understood. To further characterize at a genome-wide scale these
+regions, we introduce a new method ({\it k-enrich}) to provide a
+quantitative measure of the differential spectra of $k$-mers (DNA
+'words' of length $k$) throughout target DNA. 
 
 
 \section{Method}
-Let $\mathcal A = \{\sf A, C, G, T\}$ and $\mathcal S \in \mathcal A^\ell$, be a given specific string of length $\ell\geq 1$. %\footnote{according to wikipedia an $\ell$-mer of a string is any possible substring of size $\ell$ of that string; clearly not what we want --I stick to string!}
-In what follows, we describe a method to study the profile of $\mathcal S$ along a region of interest such as those defined by viral insertion or retrotranslocation hotspots. This provides the means to asses the significance of a differently distributed profiles along two functionally defined regions. We specialise to viral insertion hotspots as described by~\cite{IRAMM}, but the scope is clearly not restricted to this particular application. 
+Let $\mathcal A = \{\sf A, C, G, T\}$ and $\mathcal S \in \mathcal
+A^\ell$, be a given specific string of length $\ell\geq
+1$. %\footnote{according to wikipedia an $\ell$-mer of a string is any
+    %possible substring of size $\ell$ of that string; clearly not
+    %what we want --I stick to string!} 
+In what follows, we describe a method to study the profile of
+$\mathcal S$ along a region of interest such as those defined by viral
+insertion or retrotranslocation hotspots. This provides the means to
+asses the significance of a differently distributed profiles along two
+functionally defined regions. We specialise to viral insertion
+hotspots as described by~\cite{IRAMM}, but the scope is clearly not
+restricted to this particular application.  
 
-Let $h = \{h_1, \ldots, h_n\}$ bet a set of viral insertion hotspots, namely a set of DNA segments characterized by having a substantially high density of viral insertion events. Let $w$ be the length of the longest of such segments. The segments $h_1, \ldots, h_n$ are aligned with respect to their central base and then extended at both ends to have length $w$. Next, consider the partition of resulting set of segments into $k$ evenly spaced bins of length $\ell = w/k$. Denote by $h_{ij}$, $1 \leq j \leq k$, the $j$th bin of the $i$th segment. Consider now the set $r= \{r_1, \ldots, r_n\}$ of segments of width $w$ that are either at the left or at the right of any one segment in $h$. Likewise, let $r_{ij}$, $1\leq i \leq n$, $1 \leq j \leq k$, be the matrix formed by bins of length $\ell$ that result by partitioning  the elements of $r$. For any $j = 1, \ldots, k-1$ and $i = 1, \ldots, n$, let $\xi_{ij}$ and $\eta_{ij}$ be the following Bernoulli random variables
+Let $h = \{h_1, \ldots, h_n\}$ bet a set of viral insertion hotspots,
+namely a set of DNA segments characterized by having a substantially
+high density of viral insertion events. Let $w$ be the length of the
+longest of such segments. The segments $h_1, \ldots, h_n$ are aligned
+with respect to their central base and then extended at both ends to
+have length $w$. Next, consider the partition of resulting set of
+segments into $k$ evenly spaced bins of length $\ell = w/k$. Denote by
+$h_{ij}$, $1 \leq j \leq k$, the $j$th bin of the $i$th
+segment. Consider now the set $r= \{r_1, \ldots, r_n\}$ of segments of
+width $w$ that are either at the left or at the right of any one
+segment in $h$. Likewise, let $r_{ij}$, $1\leq i \leq n$, $1 \leq j
+\leq k$, be the matrix formed by bins of length $\ell$ that result by
+partitioning  the elements of $r$. For any $j = 1, \ldots, k-1$ and $i
+= 1, \ldots, n$, let $\xi_{ij}$ and $\eta_{ij}$ be the following
+Bernoulli random variables
 \begin{align*}
    &\xi_{ij} = %\mathbb 1_{\{\mathcal S \in h_{ij}\}} =
     \begin{cases}
@@ -98,38 +159,141 @@ Let $h = \{h_1, \ldots, h_n\}$ bet a set of viral insertion hotspots, namely a s
      0, &\text{otherwhise}
     \end{cases}.
 \end{align*}
-Set $\xi_{ik}  = 1$ if $\mathcal S \notin h_{i,k-1}$ and $\mathcal S \in h_{i,k-1}$, and $\xi_{ik} = 0$ otherwhise. Similarly define $\eta_{ik}$ by using the information in $r_{ik}$. Finaly, let
+Set $\xi_{ik}  = 1$ if $\mathcal S \notin h_{i,k-1}$ and $\mathcal S
+\in h_{i,k-1}$, and $\xi_{ik} = 0$ otherwhise. Similarly define
+$\eta_{ik}$ by using the information in $r_{ik}$. Finaly, let 
 \[
    \xi_j = \sum_{i=1}^n \xi_{ij}, \qquad 
    \eta_j = \sum_{i=1}^n \eta_{ij}.
 \]
-The variables $\xi_j$ and $\eta_j$, $1 \leq j \leq k$, count the number of times that the string $\mathcal S$ occurs along of a hotspot region and of a reference region respectively. 
+The variables $\xi_j$ and $\eta_j$, $1 \leq j \leq k$, count the
+number of times that the string $\mathcal S$ occurs along of a hotspot
+region and of a reference region respectively.  
 
 
 \begin{figure}
  \input{figs/fig1}
  \label{fig:methodscheme}
- \caption{A: Input data segments $h_1, \ldots, h_n$ containing the occurence of a string $\mathcal S$ and reference segments $r_1, \ldots, r_n$. B: $r_{ij}$ and $h_{ij}$ matrizes of counts for a particular realization of the random variables $\eta_{ij}$, $\xi_{ij}$. C: Profile distribution for the occurence of $\mathcal S$ along a hotspost and a reference region.}
+ \caption{A: Input data segments $h_1, \ldots, h_n$ containing the
+   occurence of a string $\mathcal S$ and reference segments $r_1,
+   \ldots, r_n$. B: $r_{ij}$ and $h_{ij}$ matrizes of counts for a
+   particular realization of the random variables $\eta_{ij}$,
+   $\xi_{ij}$. C: Profile distribution for the occurence of $\mathcal
+   S$ along a hotspost and a reference region.} 
 \end{figure}
 
 
-The basic question we like to address is wether the distribution profile of the string $\mathcal S$ is significatively different along a typical hotspot region and a reference region. This may be assessed  by considering the following $2\times k$ contingency table
+The basic question we like to address is wether the distribution
+profile of the string $\mathcal S$ is significatively different along
+a typical hotspot region and a reference region. This may be assessed
+by considering the following $2\times k$ contingency table 
 \[
   \begin{bmatrix}
   \xi_1 & \xi_2 & \ldots & \xi_k\\
   \eta_1 & \eta_2 & \ldots & \eta_k
   \end{bmatrix},
 \]
-obtained by merging the two vectors of counts $\xi_j$ and $\eta_j$. Provided the number of counts in each of the cells of this table is sufficiently large, the significance of a differential profile can be determined by using Pearson's $X^2$ statistic, which is distributed according to a $\chi^2$ density with $k-1$ degrees of freedom. Other alternatives for the large sample case exist, see for instance~\cite{RC}, but we do not pursue this further here.  It is well known that this procedure can give a poor approximation when several cells present low counts (smaller than 10). This may be the case in the current setting when analysing the profile distribution of longer strings with $\ell \geq 10$ or even smaller but rarely occuring strings. In these situations the significance for a differential profile is more appropriately determined by using Fisher's exact test, see for instance~\cite{A}. The computations necessary to derive a $p$-value are not feasible because of the large number of contingency tables that have to be considered as a reference set when $k$ is large. The significance may however be approximately computed by considering a permutation test using the method in \cite{P}. We found that R's implementation via \texttt{fisher.test} takes only few secconds for relatively large tables with $k=1000$.
+obtained by merging the two vectors of counts $\xi_j$ and
+$\eta_j$. Provided the number of counts in each of the cells of this
+table is sufficiently large, the significance of a differential
+profile can be determined by using Pearson's $X^2$ statistic, which is
+distributed according to a $\chi^2$ density with $k-1$ degrees of
+freedom. Other alternatives for the large sample case exist, see for
+instance~\cite{RC}, but we do not pursue this further here.  It is
+well known that this procedure can give a poor approximation when
+several cells present low counts (smaller than 10). This may be the
+case in the current setting when analysing the profile distribution of
+longer strings with $\ell \geq 10$ or even smaller but rarely occuring
+strings. In these situations the significance for a differential
+profile is more appropriately determined by using Fisher's exact test,
+see for instance~\cite{A}. The computations necessary to derive a
+$p$-value are not feasible because of the large number of contingency
+tables that have to be considered as a reference set when $k$ is
+large. The significance may however be approximately computed by
+considering a permutation test using the method in \cite{P}. We found
+that R's implementation via \texttt{fisher.test} takes only few
+secconds for relatively large tables with $k=1000$. 
+
+We provide examples for the two scenarios just mentioned by
+considering strings formed by a single base and strings defined by
+longer motivs with $\ell = 15$. The former provides an example where
+the $X^2$ statistic is a appropriate and the latter one that is
+amenable to the analysis with Fisher's exact test. 
 
 
-We provide examples for the two scenarios just mentioned by considering strings formed by a single base and strings defined by longer motivs with $\ell = 15$. The former provides an example where the $X^2$ statistic is a appropriate and the latter one that is amenable to the analysis with Fisher's exact test.
+\subsection{TC-Seq libraries}\label{methods:tcseqhs}
+The TC-Seq datasets analyzed here are those described by
+\cite{pmid21962510}. These are deposited at Sequence Read Archive
+(SRA, \url{http://www.ncbi.nlm.nih.gov/sra}) under accession numbers 
+SRA061477. These datasets are from two different translocation
+libraries: (i) a library from activated B cells infected with
+AID-expressing retrovirus (denoted hereafter as AID$^{rv}$) and (ii) a
+library from AID-deficient B cells (denoted as AID$^{-/-}$). Three set
+of curately hotspots were defined from these samples: (i) 59
+physiological hotspots in Ig-genes (AID$^{rv}$ and  AID$^{wt}$
+samples), (ii) 157 off-target hotspots (in non Ig-genes from
+AID$^{rv}$ and  AID$^{wt}$ samples) and iii) 34 hotspots from
+AID-deficient B cells. 
 
-\section{Results}
-Put the plots and the $p$-values.
 
-\section{Discussion}
-Mention that the results are surprising and important from the perspective of  the virus insertion problem. Then talk very briefly about the scope of this method: what kind of problems can we consider.
+\section{Results \& Discussion}
+%We have applied our method to further understand the genomic
+%complexity at recurrent translocations hotspots in murine activated B
+%lymphocytes. These translocations were induced by activation-induced
+%cytidine deaminase (AID).
+
+We have applied our method to further understand the genomic
+complexity at recurrent translocations hotspots locus induced by
+activation-induced cytidine deaminase (AID). Recurrent chromosomal
+translocations are associated with hematopoietic malignancies such as
+leukemia and lymphoma and with some sarcomas and
+carcinomas\cite{pmid20371343}.
+
+
+Although AID specifically targets the immunoglobulin genes loci (IgH,
+Igl and Ig$\lambda$), it also targets a array of non-immunoglobulin
+genes. The\footnote{STILL WRITING...} and how nucleotide composition could impact the formation of
+translocations require better understanding. In this work we examine
+the landscape of k-mers across the physiological and off-targets
+translocation hotspots from AID$^{wt}$ and AID$^{rv}$ samples and,
+translocation hotsptots from AID$^{ko}$ sample.
+
+
+The results obtained by analyzing the three hotspot sets (Section
+\ref{methods:tcseqhs}) are presented in Figure X using 1-mer (A-mer,
+C-mer, G-mer and T-mer) and 2-mer (CG-mer). By apply our method, we
+detected remarkably differences between the translocation hotspots
+across nucleotide composition for each sample.
+
+The Figures Xa and Xb exhibit 1-mer inrichment throughout of hotspots
+(C and G nucleotides goes up and A and T nucleotides goes down, see
+Table S1 for $pvalues$), but only in the physiological targets (Figure
+Xa) the enrichment is sharply in the middle of hotspots while in the
+off-targets is broad around the center of hotspots. Interestingly,
+when we search for 2-mer (CG-mer), off-targets hostpots is marked by a
+high degree of CG-mer ($pvalue$ = 4.67179250921589e-136) . This effect
+in off-targets AID supports the theoretical mechanism for CpG-type
+Double Strand Breakage proposed in \cite{pmid19070581}, when a
+slippage event between the top and bottom strand would place the CpG
+within a loop, thereby making it vulnerable to AID.
+
+According to the Figure Xc, we can not observe specific preference
+across hotspots from AID$^{ko}$ sample, although occurs nucleotide
+composition enrichment for $A|C|G|T$-mer (see Table S1 for
+$p$-values).
+
+Following these observations, these findings strongly suggest that
+either $C|G$-mer or $CG$-mer are markers for distinct
+sequence-dependent mechanisms that attract the AID under physiological
+and overexpressed levels of AID respectively.
+
+\section{Conclusion}
+We propose a standalone method ({\it k-enrich}) to calculate
+enrichment distribution of k-mer throughout of target DNA. We use a
+few examples to demonstrate that {\it k-enrich} provide a way to
+investigate the genomic complexity, although our method can be applied
+to any nominal variable data.
+
 
 \bibliographystyle{natbib}
 \scriptsize{

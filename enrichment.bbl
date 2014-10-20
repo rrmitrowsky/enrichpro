@@ -27,17 +27,15 @@ Huang, D.~W., Sherman, B.~T., and Lempicki, R.~A. (2009).
   functional analysis of large gene lists.
 \newblock {\em Nucl. Acids Res.}, {\bf 37}(1), 1--13.
 
-\bibitem[Jin {\em et~al.}(2014)Jin, Tan, Jiang, Xu, Peng, and
-  Wang]{pmid24533097}
-Jin, S., Tan, R., Jiang, Q., Xu, L., Peng, J., and Wang, Y. (2014).
-\newblock {{A} generalized topological entropy for analyzing the complexity of
-  {D}{N}{A} sequences}.
-\newblock {\em PLoS ONE\/}, {\bf 9}(2), e88519.
-
-\bibitem[Koslicki(2011)Koslicki]{pmid21317142}
-Koslicki, D. (2011).
-\newblock {{T}opological entropy of {D}{N}{A} sequences}.
-\newblock {\em Bioinformatics\/}, {\bf 27}(8), 1061--1067.
+\bibitem[Klein {\em et~al.}(2011)Klein, Resch, Jankovic, Oliveira, Yamane,
+  Nakahashi, Di~Virgilio, Bothmer, Nussenzweig, Robbiani, Casellas, and
+  Nussenzweig]{pmid21962510}
+Klein, I.~A., Resch, W., Jankovic, M., Oliveira, T., Yamane, A., Nakahashi, H.,
+  Di~Virgilio, M., Bothmer, A., Nussenzweig, A., Robbiani, D.~F., Casellas, R.,
+  and Nussenzweig, M.~C. (2011).
+\newblock {{T}ranslocation-capture sequencing reveals the extent and nature of
+  chromosomal rearrangements in {B} lymphocytes}.
+\newblock {\em Cell\/}, {\bf 147}(1), 95--106.
 
 \bibitem[Lee {\em et~al.}(2012)Lee, Iskow, Yang, Gokcumen, Haseley, Luquette,
   Lohr, Harris, Ding, Wilson, Wheeler, Gibbs, Kucherlapati, Lee, Kharchenko,
@@ -47,6 +45,12 @@ Lee, E., Iskow, R., Yang, L., Gokcumen, O., Haseley, P., Luquette, L.~J., Lohr,
   Kucherlapati, R., Lee, C., Kharchenko, P.~V., and Park, P.~J. (2012).
 \newblock {{L}andscape of somatic retrotransposition in human cancers}.
 \newblock {\em Science\/}, {\bf 337}(6097), 967--971.
+
+\bibitem[Nussenzweig and Nussenzweig(2010)Nussenzweig and
+  Nussenzweig]{pmid20371343}
+Nussenzweig, A. and Nussenzweig, M.~C. (2010).
+\newblock {{O}rigin of chromosomal translocations in lymphoid cancer}.
+\newblock {\em Cell\/}, {\bf 141}(1), 27--38.
 
 \bibitem[Patefield(1981)Patefield]{P}
 Patefield, W.~M. (1981).
@@ -72,5 +76,13 @@ Silva, I.~T., Rosales, R.~A., Holanda, A.~J., Nussenzweig, M., and Jankovic, M.
 \newblock Identification of chromosomal translocation hotspots via scan
   statistics.
 \newblock {\em Bioinformatics\/}, {\bf 30}(18), 2551--2558.
+
+\bibitem[Tsai {\em et~al.}(2008)Tsai, Lu, Raghavan, Muschen, Hsieh, and
+  Lieber]{pmid19070581}
+Tsai, A.~G., Lu, H., Raghavan, S.~C., Muschen, M., Hsieh, C.~L., and Lieber,
+  M.~R. (2008).
+\newblock {{H}uman chromosomal translocations at {C}p{G} sites and a
+  theoretical basis for their lineage and stage specificity}.
+\newblock {\em Cell\/}, {\bf 135}(6), 1130--1142.
 
 \end{thebibliography}

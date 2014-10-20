@@ -1,4 +1,29 @@
-@book{A,
+head	1.1;
+access;
+symbols;
+locks
+	rrosales:1.1; strict;
+comment	@# @;
+
+
+1.1
+date	2014.10.20.16.18.43;	author rrosales;	state Exp;
+branches;
+next	;
+
+
+desc
+@This bibliography database (i.e. for BibTeX of course!)
+accompanies my first version ECS v 1.0.
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@@@book{A,
   author = {A. Agresti},
   publisher = {Wiley-Interscience},
   title = {{Categorical Data Analysis}},
@@ -7,7 +32,7 @@
   year = {2012}
 }
 
-@book{RC,
+@@book{RC,
    author = {Timothy R. C. Read and Noel A. C. Cressie},
    title = {Goodness-of-Fit Statistics for Discrete Multivariate Data},
    year = {1988},
@@ -17,7 +42,7 @@
 }
 
 % a paper popped by Israel, somehow similar to Israel's initial idea
-@article{BM,
+@@article{BM,
   author = {Timothy L. Bailey and Philip Machanick},
   title = {Inferring direct {DNA} binding from {ChIP}-seq},
   year = {2012},
@@ -28,7 +53,7 @@
 }
 
 % a review about enrichment p-values for GO (Gene Ontologies)
-@article{HSL,
+@@article{HSL,
   author = {Da Wei Huang and Brad T. Sherman and Richard A. Lempicki},
   title = {Bioinformatics enrichment tools: paths toward the comprehensive functional analysis of large gene lists},
   year = {2009},
@@ -40,7 +65,7 @@
 
 
 % how the enrichment p-values for GO (Gene Ontologies) are calculated
-@article{RPTP,
+@@article{RPTP,
   author = {I. Rivals and L. Personnaz and L. Taing and M. C. Potier},
   title = {Enrichment or depletion of a {GO} category within a class of genes: which test?},
   year = {2007},
@@ -50,7 +75,7 @@
   pages = {401--407}
 }
 
-@article{IRAMM,
+@@article{IRAMM,
   author = {Israel T. Silva and Rafael A. Rosales and Adriano J. Holanda 
    and Michel Nussenzweig and Mila Jankovic},
   year = {2014},
@@ -63,7 +88,7 @@
   OPTDOI = {doi:10.1093/bioinformatics/btu351}
 }
 
-@Article{P,
+@@Article{P,
   author =       "W. M. Patefield",
   title =        "{Algorithm AS 159}: An Efficient Method of Generating Random {$R \times C$} Tables with Given Row and Column Totals",
   journal =      {J. Appl. Stat},
@@ -83,7 +108,7 @@
   OPTjournal-URL =  "http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1467-9876/issues",
 }
 
-@Article{pmid23326238, 
+@@Article{pmid23326238, 
  Author="De, S.  and Shaknovich, R.  and Riester, M.  and 
     Elemento, O.  and Geng, H.  and Kormaksson, M.  and Jiang, 
     Y. and Woolcock, B.  and Johnson, N.  and Polo, J. M.  and 
@@ -97,7 +122,7 @@
   Pages="e1003137"
 }
 
-@Article{pmid24533097, 
+@@Article{pmid24533097, 
   Author="Jin, S.  and Tan, R.  and Jiang, Q.  and Xu, L.  and 
    Peng, J.  and Wang, Y.", 
   Title="{{A} generalized topological entropy for analyzing the 
@@ -109,7 +134,7 @@
  Pages="e88519" 
 }
 
-@Article{pmid21317142, 
+@@Article{pmid21317142, 
   Author="Koslicki, D. ", 
   Title="{{T}opological entropy of {D}{N}{A} sequences}", 
   Journal="Bioinformatics", 
@@ -119,7 +144,7 @@
   Pages="1061--1067",
   Month="Apr"}
 
-@Article{pmid22745252, 
+@@Article{pmid22745252, 
   Author="Lee, E.  and Iskow, R.  and Yang, L.  and Gokcumen, O. and 
     Haseley, P.  and Luquette, L. J.  and Lohr, J. G.  and 
     Harris, C. C.  and Ding, L.  and Wilson, R. K.  and Wheeler, D. A.  
@@ -134,35 +159,5 @@
   Month="Aug"
 }
 
-@Article{pmid21962510,
-   Author="Klein, I. A.  and Resch, W.  and Jankovic, M.  and Oliveira, T.  and Yamane, A.  and Nakahashi, H.  and Di Virgilio, M.  and Bothmer, A.  and Nussenzweig, A.  and Robbiani, D. F.  and Casellas, R.  and Nussenzweig, M. C. ",
-   Title="{{T}ranslocation-capture sequencing reveals the extent and nature of chromosomal rearrangements in {B} lymphocytes}",
-   Journal="Cell",
-   Year="2011",
-   Volume="147",
-   Number="1",
-   Pages="95--106",
-   Month="Sep"
-}
 
-@Article{pmid19070581,
-   Author="Tsai, A. G.  and Lu, H.  and Raghavan, S. C.  and Muschen, M.  and Hsieh, C. L.  and Lieber, M. R. ",
-   Title="{{H}uman chromosomal translocations at {C}p{G} sites and a theoretical basis for their lineage and stage specificity}",
-   Journal="Cell",
-   Year="2008",
-   Volume="135",
-   Number="6",
-   Pages="1130--1142",
-   Month="Dec"
-}
-@Article{pmid20371343,
-   Author="Nussenzweig, A.  and Nussenzweig, M. C. ",
-   Title="{{O}rigin of chromosomal translocations in lymphoid cancer}",
-   Journal="Cell",
-   Year="2010",
-   Volume="141",
-   Number="1",
-   Pages="27--38",
-   Month="Apr"
-}
-
+@
