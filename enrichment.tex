@@ -24,8 +24,8 @@
 
 \usepackage{txfonts}
 %  $$$: 
-%\usepackage[subscriptcorrection,txsy]{mtpro}
-%\usepackage[mtphrb]{mtpams}
+\usepackage[subscriptcorrection,txsy]{mtpro}
+\usepackage[mtphrb]{mtpams}
 %\usepackage[mtpcal, mtpfrak]{mtpb}
 %
 \newcommand{\bA}{\textsf{\textit{A}}}
@@ -168,18 +168,18 @@ $\eta_{ik}$ by using the information in $r_{ik}$. Finaly, let
 \]
 The variables $\xi_j$ and $\eta_j$, $1 \leq j \leq k$, count the
 number of times that the string $\mathcal S$ occurs along of a hotspot
-region and of a reference region respectively.  
+region and of a reference region respectively.  A schematic representation of  this procedure is shown in Figure~\ref{fig:methodscheme}.
 
 
 \begin{figure}
  \input{figs/fig1}
- \label{fig:methodscheme}
  \caption{A: Input data segments $h_1, \ldots, h_n$ containing the
    occurence of a string $\mathcal S$ and reference segments $r_1,
-   \ldots, r_n$. B: $r_{ij}$ and $h_{ij}$ matrizes of counts for a
+   \ldots, r_n$. B: matrizes of counts for a
    particular realization of the random variables $\eta_{ij}$,
    $\xi_{ij}$. C: Profile distribution for the occurence of $\mathcal
    S$ along a hotspost and a reference region.} 
+ \label{fig:methodscheme}
 \end{figure}
 
 
@@ -247,11 +247,11 @@ complexity at recurrent translocations hotspots locus induced by
 activation-induced cytidine deaminase (AID). Recurrent chromosomal
 translocations are associated with hematopoietic malignancies such as
 leukemia and lymphoma and with some sarcomas and
-carcinomas\cite{pmid20371343}.
+carcinomas \cite{pmid20371343}.
 
 
-Although AID specifically targets the immunoglobulin genes loci (IgH,
-Igl and Ig$\lambda$), it also targets a array of non-immunoglobulin
+Although AID specifically targets the immunoglobulin genes loci (\emph{IgH},
+\emph{Igl} and \emph{Ig}$\lambda$), it also targets a array of non-immunoglobulin
 genes. The\footnote{STILL WRITING...} and how nucleotide composition could impact the formation of
 translocations require better understanding. In this work we examine
 the landscape of k-mers across the physiological and off-targets
@@ -261,23 +261,12 @@ translocation hotsptots from AID$^{ko}$ sample.
 
 The results obtained by analyzing the three hotspot sets (Section
 \ref{methods:tcseqhs}) are presented in Figure X using 1-mer (A-mer,
-C-mer, G-mer and T-mer) and 2-mer (CG-mer). By apply our method, we
-detected remarkably differences between the translocation hotspots
-across nucleotide composition for each sample.
-
-The Figures Xa and Xb exhibit 1-mer inrichment throughout of hotspots
-(C and G nucleotides goes up and A and T nucleotides goes down, see
-Table S1 for $pvalues$), but only in the physiological targets (Figure
-Xa) the enrichment is sharply in the middle of hotspots while in the
-off-targets is broad around the center of hotspots. Interestingly,
-when we search for 2-mer (CG-mer), off-targets hostpots is marked by a
-high degree of CG-mer ($pvalue$ = 4.67179250921589e-136) . This effect
-in off-targets AID supports the theoretical mechanism for CpG-type
-Double Strand Breakage proposed in \cite{pmid19070581}, when a
+C-mer, G-mer and T-mer) and 2-mer (CG-mer). There nucleotide composition
+for each sample are remarkably different. The Figures Xa and Xb exhibit 1-mer inrichment throughout of hotspots (C and G nucleotides goes up and A and T nucleotides goes down, see Table S1 for $p$-values), but only in the physiological targets (Figure Xa) the enrichment is sharply in the middle of hotspots while in the off-targets is broad around the center of hotspots. Interestingly, when we search for 2-mer (CG-mer), off-targets hostpots is marked by a high degree of CG-mer ($p$-value = 4.67179250921589e-136) . This effect in off-targets AID supports the theoretical mechanism for CpG-type Double Strand Breakage proposed in \cite{pmid19070581}, when a
 slippage event between the top and bottom strand would place the CpG
 within a loop, thereby making it vulnerable to AID.
 
-According to the Figure Xc, we can not observe specific preference
+According to Figure Xc, we can not observe specific preference
 across hotspots from AID$^{ko}$ sample, although occurs nucleotide
 composition enrichment for $A|C|G|T$-mer (see Table S1 for
 $p$-values).
