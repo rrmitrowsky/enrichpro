@@ -24,8 +24,8 @@
 
 \usepackage{txfonts}
 %  $$$: 
-\usepackage[subscriptcorrection,txsy]{mtpro}
-\usepackage[mtphrb]{mtpams}
+%\usepackage[subscriptcorrection,txsy]{mtpro}
+%\usepackage[mtphrb]{mtpams}
 %\usepackage[mtpcal, mtpfrak]{mtpb}
 %
 \newcommand{\bA}{\textsf{\textit{A}}}
@@ -39,10 +39,10 @@
 \begin{document}
 \title[AID hotspots]{Constitution Analysis} 
  \author[I. T. Silva~\textit{et~al}]{%
-     Israel T. Silva\,$^{1,3,}$\footnote{to
+     $A$\,$^{1,3,}$\footnote{to
   whom correspondence should be addressed}\ , 
-  and
-       Rafael A. Rosales\,$^2$
+     $B$\,$^2$ and
+     $C$
   }
 
  \address{$^{1}$Laboratory of Molecular Immunology, The Rockefeller 
@@ -68,23 +68,9 @@
 \end{abstract}
 
 \section{Introduction}
-The genome is targeted by a sophisticated and highly coordinated
-series of molecular events. Among these events, aberrant DNA
-methylation patterns in human malignancy \cite{pmid23326238}, somatic
-retrotransposition in human cancers \cite{pmid22745252}, AID-dependent
-chromosomal translocations (Klein, 2011) and HIV integration (Cohn,
-2014), which arrives throughout DNA, are not randomly distributed but
-instead associated with chromosomal regions and contributes to disrupt
-the integrity of the genome and human disease. 
+The genome is targeted by a sophisticated and highly coordinated series of molecular events. Among these events, aberrant DNA methylation patterns in human malignancy \cite{pmid23326238}, somatic retrotransposition in human cancers \cite{pmid22745252}, AID-dependent chromosomal translocations \cite{pmid21962510} and HIV integration \cite{pmid22762018}, which arrives throughout DNA, are not randomly distributed but instead associated with chromosomal regions and contributes to disrupt the integrity of the genome and human disease. 
 
-As result, these regions represents a genomic context in which are
-associate with multiple underlying mechanisms. The motif-based
-sequence analysis is the starting point to aim potential binding site
-of cis-regulatory elements associated. Nevertheless, the inherent low
-signal/noise ratio in sequence-based motif discovery is a limitation
-to detect a nucleic acid sequence pattern that has some biological
-significance. Moreover, these events may recognise a structural
-feature, rather than a specific sequence motif. 
+As result, these regions represents a genomic context in which are associate with multiple underlying mechanisms. The motif-based sequence analysis is the starting point to aim potential binding site of cis-regulatory elements associated. Nevertheless, the inherent low signal/noise ratio in sequence-based motif discovery is a limitation to detect a nucleic acid sequence pattern that has some biological significance \cite{pmid16284194}. Moreover, these events may recognise a structural feature, rather than a specific sequence motif. 
 
 %Others approaches were introduced to detect functional regions using
 %methods for computing sequence complexities
@@ -97,12 +83,7 @@ feature, rather than a specific sequence motif.
 %\cite{pmid21317142}.\footnote{its: I would prefer to leave entropy out
 %  unless we have a really good point we want to make} 
 
-Our work has some intersection whit the computation of `enrichment
-$p$-values' considered in  GO analysis. We may include the references
-\cite{HSL}, \cite{RPTP} (just one!) or any other if you know a better
-alternative. We may like to mention the paper by \cite{BM} because it
-also considers a test for enrichment (although it is restricted to
-ChiP-seq peaks, and somehow different). 
+% Our work has some intersection whit the computation of `enrichment $p$-values' considered in  GO analysis. We may include the references \cite{HSL}, \cite{RPTP} (just one!) or any other if you know a better alternative. We may like to mention the paper by \cite{BM} because it also considers a test for enrichment (although it is restricted to ChiP-seq peaks, and somehow different). 
 
 However, how exactly the pattern nucleotide composition could
 influence the selection of target site selection are not well
@@ -118,17 +99,11 @@ A^\ell$, be a given specific string of length $\ell\geq
 1$. %\footnote{according to wikipedia an $\ell$-mer of a string is any
     %possible substring of size $\ell$ of that string; clearly not
     %what we want --I stick to string!} 
-In what follows, we describe a method to study the profile of
-$\mathcal S$ along a region of interest such as those defined by viral
-insertion or retrotranslocation hotspots. This provides the means to
-asses the significance of a differently distributed profiles along two
-functionally defined regions. We specialise to viral insertion
-hotspots as described by~\cite{IRAMM}, but the scope is clearly not
+In what follows, we describe a method to study the profile of $\mathcal S$ along a region of interest such as those defined by viral insertion or translocation breakpoint hotspots. This provides the means to asses the significance of a differently distributed profiles along two functionally defined regions. We specialise genomic regions with translocations hotspots as described by~\cite{pmid21962510}, but the scope is clearly not
 restricted to this particular application.  
 
-Let $h = \{h_1, \ldots, h_n\}$ bet a set of viral insertion hotspots,
-namely a set of DNA segments characterized by having a substantially
-high density of viral insertion events. Let $w$ be the length of the
+Let $h = \{h_1, \ldots, h_n\}$ bet a set of translocation breakpoint hotspots, namely a set of DNA segments characterized by having a substantially
+high density of translocations events. Let $w$ be the length of the
 longest of such segments. The segments $h_1, \ldots, h_n$ are aligned
 with respect to their central base and then extended at both ends to
 have length $w$. Next, consider the partition of resulting set of
@@ -220,20 +195,8 @@ longer motivs with $\ell = 15$. The former provides an example where
 the $X^2$ statistic is a appropriate and the latter one that is
 amenable to the analysis with Fisher's exact test. 
 
-
 \subsection{TC-Seq libraries}\label{methods:tcseqhs}
-The TC-Seq datasets analyzed here are those described by
-\cite{pmid21962510}. These are deposited at Sequence Read Archive
-(SRA, \url{http://www.ncbi.nlm.nih.gov/sra}) under accession numbers 
-SRA061477. These datasets are from two different translocation
-libraries: (i) a library from activated B cells infected with
-AID-expressing retrovirus (denoted hereafter as AID$^{rv}$) and (ii) a
-library from AID-deficient B cells (denoted as AID$^{-/-}$). Three set
-of curately hotspots were defined from these samples: (i) 59
-physiological hotspots in Ig-genes (AID$^{rv}$ and  AID$^{wt}$
-samples), (ii) 157 off-target hotspots (in non Ig-genes from
-AID$^{rv}$ and  AID$^{wt}$ samples) and iii) 34 hotspots from
-AID-deficient B cells. 
+The TC-Seq datasets analyzed here are those described by \cite{pmid21962510}. These are deposited at Sequence Read Archive (SRA, \url{http://www.ncbi.nlm.nih.gov/sra}) under accession numbers SRA061477. These datasets are from three different translocation libraries: (i) a library from activated B cells infected with AID-expressing retrovirus (denoted hereafter as AID$^{rv}$), (ii) a library from AID-deficient B cells (denoted as AID$^{-/-}$) and (iii)  a library from activated B cells expressing wild-type levels (AID$^{wt}$). Three set of curately hotspots were defined from these samples: (i) 59 physiological hotspots in Ig-genes (AID$^{rv}$ and AID$^{wt}$ samples), (ii) 157 off-target hotspots (in non Ig-genes from AID$^{rv}$ and  AID$^{wt}$ samples) and iii) 34 hotspots from AID-deficient B cells (AID$-/-$). 
 
 
 \section{Results \& Discussion}
@@ -242,46 +205,31 @@ AID-deficient B cells.
 %lymphocytes. These translocations were induced by activation-induced
 %cytidine deaminase (AID).
 
-We have applied our method to further understand the genomic
-complexity at recurrent translocations hotspots locus induced by
-activation-induced cytidine deaminase (AID). Recurrent chromosomal
-translocations are associated with hematopoietic malignancies such as
-leukemia and lymphoma and with some sarcomas and
-carcinomas \cite{pmid20371343}.
+Common uses of k-mers include counting all distinct k-mers in genome and transcriptome assembly, variants detection and read error correction\cite{pmid23325618}. Here, we address the problem to detect functional regions across the entire genome by searching k-mer enrichment on DNA regions.
 
+We have applied our method to further understand the genomic complexity at recurrent translocations hotspots locus induced by activation-induced cytidine deaminase (AID). Recurrent chromosomal translocations are associated with hematopoietic malignancies such as leukemia and lymphoma and with some sarcomas and carcinomas \cite{pmid20371343}.
 
-Although AID specifically targets the immunoglobulin genes loci (\emph{IgH},
-\emph{Igl} and \emph{Ig}$\lambda$), it also targets a array of non-immunoglobulin
-genes. The\footnote{STILL WRITING...} and how nucleotide composition could impact the formation of
-translocations require better understanding. In this work we examine
-the landscape of k-mers across the physiological and off-targets
-translocation hotspots from AID$^{wt}$ and AID$^{rv}$ samples and,
-translocation hotsptots from AID$^{ko}$ sample.
+Although AID specifically targets the immunoglobulin genes loci (\emph{IgH}, \emph{Igl} and \emph{Ig}$\lambda$), it also targets a array of non-immunoglobulin genes and how nucleotide composition could impact the formation of translocations require better understanding. In this work we examine the landscape of k-mers across the physiological and off-targets translocation hotspots from AID$^{wt}$, AID$^{rv}$ and AID$^{ko}$ samples.
 
 
 The results obtained by analyzing the three hotspot sets (Section
-\ref{methods:tcseqhs}) are presented in Figure X using 1-mer (A-mer,
-C-mer, G-mer and T-mer) and 2-mer (CG-mer). There nucleotide composition
-for each sample are remarkably different. The Figures Xa and Xb exhibit 1-mer inrichment throughout of hotspots (C and G nucleotides goes up and A and T nucleotides goes down, see Table S1 for $p$-values), but only in the physiological targets (Figure Xa) the enrichment is sharply in the middle of hotspots while in the off-targets is broad around the center of hotspots. Interestingly, when we search for 2-mer (CG-mer), off-targets hostpots is marked by a high degree of CG-mer ($p$-value = 4.67179250921589e-136) . This effect in off-targets AID supports the theoretical mechanism for CpG-type Double Strand Breakage proposed in \cite{pmid19070581}, when a
-slippage event between the top and bottom strand would place the CpG
-within a loop, thereby making it vulnerable to AID.
+\ref{methods:tcseqhs}) are presented in Figure 1 using 1-mer (A-mer, C-mer,
+G-mer and T-mer) and 2-mer (CG-mer). The nucleotide composition for each
+sample are remarkably different. The Figures 1D and 1F exhibit 1-mer
+inrichment throughout of hotspots (C and G nucleotides goes up and A and T
+nucleotides goes down, see Table S1 for $p$-values), but only in the
+physiological targets (Figure 1D) the enrichment is sharply in the middle of
+hotspots while in the off-targets is broad around the center of hotspots
+(Figure 1F). Interestingly, when we search for 2-mer (CG-mer), off-targets
+hostpots is marked by a high degree of CG-mer ($p$-value =
+4.67179250921589e-136). This effect in off-targets AID is consistent with the theoretical mechanism for CpG-type Double Strand Breakage proposed in \cite{pmid19070581}, when a slippage event between the top and bottom strand would place the CpG within a loop, thereby making it vulnerable to AID.
 
-According to Figure Xc, we can not observe specific preference
-across hotspots from AID$^{ko}$ sample, although occurs nucleotide
-composition enrichment for $A|C|G|T$-mer (see Table S1 for
-$p$-values).
+According to Figure 1B, we can not observe specific preference across hotspots from AID$^{ko}$ sample, although occurs nucleotide composition enrichment for $A|C|G|T$-mer (see Table S1 for $p$-values).
 
-Following these observations, these findings strongly suggest that
-either $C|G$-mer or $CG$-mer are markers for distinct
-sequence-dependent mechanisms that attract the AID under physiological
-and overexpressed levels of AID respectively.
+Following these observations, these findings strongly suggest that either $C|G$-mer or $CG$-mer are markers for distinct sequence-dependent mechanisms that attract the AID under physiological and overexpressed levels of AID respectively.
 
 \section{Conclusion}
-We propose a standalone method ({\it k-enrich}) to calculate
-enrichment distribution of k-mer throughout of target DNA. We use a
-few examples to demonstrate that {\it k-enrich} provide a way to
-investigate the genomic complexity, although our method can be applied
-to any nominal variable data.
+We propose a standalone method ({\it k-enrich}) to calculate enrichment distribution of k-mer throughout of target DNA. We use a few examples to demonstrate that {\it k-enrich} provide a way to investigate the genomic complexity, although our method can be applied to any nominal variable data.
 
 
 \bibliographystyle{natbib}

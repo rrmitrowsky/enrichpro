@@ -6,11 +6,6 @@ Agresti, A. (2012).
 \newblock Wiley Series in Probability and Statistics. Wiley-Interscience, 3rd
   edition.
 
-\bibitem[Bailey and Machanick(2012)Bailey and Machanick]{BM}
-Bailey, T.~L. and Machanick, P. (2012).
-\newblock Inferring direct {DNA} binding from {ChIP}-seq.
-\newblock {\em Nucl. Acids Res.}, {\bf 40}(17), 1--10.
-
 \bibitem[De {\em et~al.}(2013)De, Shaknovich, Riester, Elemento, Geng,
   Kormaksson, Jiang, Woolcock, Johnson, Polo, Cerchietti, Gascoyne, Melnick,
   and Michor]{pmid23326238}
@@ -20,12 +15,6 @@ De, S., Shaknovich, R., Riester, M., Elemento, O., Geng, H., Kormaksson, M.,
 \newblock {{A}berration in {D}{N}{A} methylation in {B}-cell lymphomas has a
   complex origin and increases with disease severity}.
 \newblock {\em PLoS Genet.}, {\bf 9}(1), e1003137.
-
-\bibitem[Huang {\em et~al.}(2009)Huang, Sherman, and Lempicki]{HSL}
-Huang, D.~W., Sherman, B.~T., and Lempicki, R.~A. (2009).
-\newblock Bioinformatics enrichment tools: paths toward the comprehensive
-  functional analysis of large gene lists.
-\newblock {\em Nucl. Acids Res.}, {\bf 37}(1), 1--13.
 
 \bibitem[Klein {\em et~al.}(2011)Klein, Resch, Jankovic, Oliveira, Yamane,
   Nakahashi, Di~Virgilio, Bothmer, Nussenzweig, Robbiani, Casellas, and
@@ -62,20 +51,6 @@ Patefield, W.~M. (1981).
 Read, T. R.~C. and Cressie, N. A.~C. (1988).
 \newblock {\em Goodness-of-Fit Statistics for Discrete Multivariate Data\/}.
 \newblock Springer Series in Statistics. Springer Verlag, New York.
-
-\bibitem[Rivals {\em et~al.}(2007)Rivals, Personnaz, Taing, and Potier]{RPTP}
-Rivals, I., Personnaz, L., Taing, L., and Potier, M.~C. (2007).
-\newblock Enrichment or depletion of a {GO} category within a class of genes:
-  which test?
-\newblock {\em Bioinformatics\/}, {\bf 23}(4), 401--407.
-
-\bibitem[Silva {\em et~al.}(2014)Silva, Rosales, Holanda, Nussenzweig, and
-  Jankovic]{IRAMM}
-Silva, I.~T., Rosales, R.~A., Holanda, A.~J., Nussenzweig, M., and Jankovic, M.
-  (2014).
-\newblock Identification of chromosomal translocation hotspots via scan
-  statistics.
-\newblock {\em Bioinformatics\/}, {\bf 30}(18), 2551--2558.
 
 \bibitem[Tsai {\em et~al.}(2008)Tsai, Lu, Raghavan, Muschen, Hsieh, and
   Lieber]{pmid19070581}
