@@ -24,7 +24,7 @@
 
 \usepackage{txfonts}
 %  $$$: 
-%\usepackage[subscriptcorrection,txsy]{mtpro}
+\usepackage[subscriptcorrection,txsy]{mtpro}
 %\usepackage[mtphrb]{mtpams}
 %\usepackage[mtpcal, mtpfrak]{mtpb}
 %
@@ -187,7 +187,7 @@ tables that have to be considered as a reference set when $k$ is
 large. The significance may however be approximately computed by
 considering a permutation test using the method in \cite{P}. We found
 that R's implementation via \texttt{fisher.test} takes only few
-secconds for relatively large tables with $k=1000$. 
+secconds for relatively large tables, for instance with $k=1000$. 
 
 We provide examples for the two scenarios just mentioned by
 considering strings formed by a single base and strings defined by
@@ -196,7 +196,7 @@ the $X^2$ statistic is a appropriate and the latter one that is
 amenable to the analysis with Fisher's exact test. 
 
 \subsection{TC-Seq libraries}\label{methods:tcseqhs}
-The TC-Seq datasets analyzed here are those described by \cite{pmid21962510}. These are deposited at Sequence Read Archive (SRA, \url{http://www.ncbi.nlm.nih.gov/sra}) under accession numbers SRA061477. These datasets are from three different translocation libraries: (i) a library from activated B cells infected with AID-expressing retrovirus (denoted hereafter as AID$^{rv}$), (ii) a library from AID-deficient B cells (denoted as AID$^{-/-}$) and (iii)  a library from activated B cells expressing wild-type levels (AID$^{wt}$). Three set of curately hotspots were defined from these samples: (i) 59 physiological hotspots in Ig-genes (AID$^{rv}$ and AID$^{wt}$ samples), (ii) 157 off-target hotspots (in non Ig-genes from AID$^{rv}$ and  AID$^{wt}$ samples) and iii) 34 hotspots from AID-deficient B cells (AID$-/-$). 
+The TC-Seq datasets analyzed here are those described by \cite{pmid21962510}. These are deposited at Sequence Read Archive (SRA, \url{http://www.ncbi.nlm.nih.gov/sra}) under accession numbers SRA061477. These datasets are from three different translocation libraries: (i) a library from activated B cells infected with AID-expressing retrovirus (denoted hereafter as AID$^{rv}$), (ii) a library from AID-deficient B cells (denoted as AID$^{-/-}$) and (iii)  a library from activated B cells expressing wild-type levels (AID$^{wt}$). Three set of curately hotspots were defined from these samples: (i) 59 physiological hotspots in Ig-genes (AID$^{rv}$ and AID$^{wt}$ samples), (ii) 157 off-target hotspots (in non Ig-genes from AID$^{rv}$ and  AID$^{wt}$ samples) and iii) 34 hotspots from AID-deficient B cells (AID$-/-$).\footnote{The actuall choice of the data sets and the objective for this is not clear. I am really confused. We have 3 conditions: (i)=AID$^{rv}$, (ii)=AID$^{-/-}$=AID$^{ko}$, (iii)=AID$^{wt}$. Fine. Now, we make use the HS of these data sets: 59 of these are in Ig genes, by joining HS from (i) and (iii), that is by gathering the HS from both conditions that include Ig genes --is this right?; 157 are in non Ig genes (again data is from the (i) and (iii) conditions); and then 34 HS from the (ii) condition. What is the purpose of this: namely to see if there is any $k$-mer difference between Ig HS \& non-Ig HS? There could be another objective: are there any differences between a $k$-mer composition across (i), (ii) and (iii)? This is all not made clear and has to be explicited. What I mean is that we have to say what we are actually wanting to compare --what is the objective of all this?}
 
 
 \section{Results \& Discussion}
@@ -205,11 +205,15 @@ The TC-Seq datasets analyzed here are those described by \cite{pmid21962510}. Th
 %lymphocytes. These translocations were induced by activation-induced
 %cytidine deaminase (AID).
 
-Common uses of k-mers include counting all distinct k-mers in genome and transcriptome assembly, variants detection and read error correction\cite{pmid23325618}. Here, we address the problem to detect functional regions across the entire genome by searching k-mer enrichment on DNA regions.
+Common uses of $k$-mers include counting all distinct $k$-mers in genome and transcriptome assembly, variants detection and read error correction \cite{pmid23325618}. Here, we address the problem to detect functional regions across the entire genome by searching $k$-mer enrichment on DNA regions.
 
 We have applied our method to further understand the genomic complexity at recurrent translocations hotspots locus induced by activation-induced cytidine deaminase (AID). Recurrent chromosomal translocations are associated with hematopoietic malignancies such as leukemia and lymphoma and with some sarcomas and carcinomas \cite{pmid20371343}.
 
-Although AID specifically targets the immunoglobulin genes loci (\emph{IgH}, \emph{Igl} and \emph{Ig}$\lambda$), it also targets a array of non-immunoglobulin genes and how nucleotide composition could impact the formation of translocations require better understanding. In this work we examine the landscape of k-mers across the physiological and off-targets translocation hotspots from AID$^{wt}$, AID$^{rv}$ and AID$^{ko}$ samples.
+Although AID specifically targets the immunoglobulin genes loci (\emph{IgH}, \emph{Igl} and \emph{Ig}$\lambda$), it also targets a array of non-immunoglobulin genes and how nucleotide composition could impact the formation of translocations require better understanding. In this work we examine the landscape of $k$-mers across the physiological and off-targets translocation hotspots from AID$^{wt}$, AID$^{rv}$ and AID$^{ko}$ samples.\footnote{OK, this is the sort of phrase that holds the key to what we want to show with these examples. Still, it is not clear enough. For instance, if we want to compare $k$-mer profiles in HS & non-HS regions in each (i), (ii) and (iii) as you state in this paragraph, why do we join the HS of \emph{wt} and \emph{rv}? Your phrase is OK but we need to say perhaps something more. Some further questions: 
+\begin{enumerate}
+\item what happens if we do not join \emph{wt} with \emph{rv} and analyse the HS \& non-HS profiles for the CG-mer? Is there any difference between these two groups?
+\item Are the data in Figure 1(A) (i.e. for the \emph{ko} condition) for Ig or non-Ig or both?
+\end{enumerate}}
 
 
 The results obtained by analyzing the three hotspot sets (Section
@@ -222,14 +226,20 @@ physiological targets (Figure 1D) the enrichment is sharply in the middle of
 hotspots while in the off-targets is broad around the center of hotspots
 (Figure 1F). Interestingly, when we search for 2-mer (CG-mer), off-targets
 hostpots is marked by a high degree of CG-mer ($p$-value =
-4.67179250921589e-136). This effect in off-targets AID is consistent with the theoretical mechanism for CpG-type Double Strand Breakage proposed in \cite{pmid19070581}, when a slippage event between the top and bottom strand would place the CpG within a loop, thereby making it vulnerable to AID.
+4.67179250921589e-136). This effect in off-targets AID is consistent with the theoretical mechanism for CpG-type Double Strand Breakage proposed in \cite{pmid19070581}, when a slippage event between the top and bottom strand would place the CpG within a loop, thereby making it vulnerable to AID.\footnote{OK, now comes the interpretation of all of this. My very imediate conclusion/questions from the data in Figure 1 are as follows.
+\begin{enumerate}
+\item CG-mer analysis: Fig (C) and Fig (E) show that non-IG AID breaks are indeed enriched in CG. This does not happens in the physiological target. Nice. But how to compare these two with Fig (A)? Again, is (A) for Ig HS, or not?
+\item The description of the A, C, G, T-mers results (i.e. Fig (D) \& Fig (F)) is fine! And it also connects with the profile analysis of CG for IG and non-IG.
+\item To supoort further the CpG theory, would it be interesting to look after longer CG repets, i.e. for $k$-mers like CGCG or CGCGCG or even CGCGCGCG?
+\item How does the \emph{ko} data fits into the analysis. It is hard to tell. Maybe, we could leave this out of the paper?
+\end{enumerate}}
 
 According to Figure 1B, we can not observe specific preference across hotspots from AID$^{ko}$ sample, although occurs nucleotide composition enrichment for $A|C|G|T$-mer (see Table S1 for $p$-values).
 
 Following these observations, these findings strongly suggest that either $C|G$-mer or $CG$-mer are markers for distinct sequence-dependent mechanisms that attract the AID under physiological and overexpressed levels of AID respectively.
 
 \section{Conclusion}
-We propose a standalone method ({\it k-enrich}) to calculate enrichment distribution of k-mer throughout of target DNA. We use a few examples to demonstrate that {\it k-enrich} provide a way to investigate the genomic complexity, although our method can be applied to any nominal variable data.
+We propose a standalone method ({\it k-enrich}) to calculate enrichment distribution of $k$-mer throughout of target DNA. We use a few examples to demonstrate that {\it k-enrich} provide a way to investigate the genomic complexity, although our method can be applied to any nominal variable data.
 
 
 \bibliographystyle{natbib}

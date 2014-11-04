@@ -6,6 +6,11 @@ Agresti, A. (2012).
 \newblock Wiley Series in Probability and Statistics. Wiley-Interscience, 3rd
   edition.
 
+\bibitem[Craigie and Bushman(2012)Craigie and Bushman]{pmid22762018}
+Craigie, R. and Bushman, F.~D. (2012).
+\newblock {{H}{I}{V} {D}{N}{A} integration}.
+\newblock {\em Cold Spring Harb Perspect Med\/}, {\bf 2}(7), a006890.
+
 \bibitem[De {\em et~al.}(2013)De, Shaknovich, Riester, Elemento, Geng,
   Kormaksson, Jiang, Woolcock, Johnson, Polo, Cerchietti, Gascoyne, Melnick,
   and Michor]{pmid23326238}
@@ -15,6 +20,11 @@ De, S., Shaknovich, R., Riester, M., Elemento, O., Geng, H., Kormaksson, M.,
 \newblock {{A}berration in {D}{N}{A} methylation in {B}-cell lymphomas has a
   complex origin and increases with disease severity}.
 \newblock {\em PLoS Genet.}, {\bf 9}(1), e1003137.
+
+\bibitem[Hu {\em et~al.}(2005)Hu, Li, and Kihara]{pmid16284194}
+Hu, J., Li, B., and Kihara, D. (2005).
+\newblock {{L}imitations and potentials of current motif discovery algorithms}.
+\newblock {\em Nucleic Acids Res.}, {\bf 33}(15), 4899--4913.
 
 \bibitem[Klein {\em et~al.}(2011)Klein, Resch, Jankovic, Oliveira, Yamane,
   Nakahashi, Di~Virgilio, Bothmer, Nussenzweig, Robbiani, Casellas, and
@@ -51,6 +61,11 @@ Patefield, W.~M. (1981).
 Read, T. R.~C. and Cressie, N. A.~C. (1988).
 \newblock {\em Goodness-of-Fit Statistics for Discrete Multivariate Data\/}.
 \newblock Springer Series in Statistics. Springer Verlag, New York.
+
+\bibitem[Rizk {\em et~al.}(2013)Rizk, Lavenier, and Chikhi]{pmid23325618}
+Rizk, G., Lavenier, D., and Chikhi, R. (2013).
+\newblock {{D}{S}{K}: {\it k}-mer counting with very low memory usage}.
+\newblock {\em Bioinformatics\/}, {\bf 29}(5), 652--653.
 
 \bibitem[Tsai {\em et~al.}(2008)Tsai, Lu, Raghavan, Muschen, Hsieh, and
   Lieber]{pmid19070581}
